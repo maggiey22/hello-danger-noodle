@@ -27,3 +27,12 @@ def echoHTML():
         result.append("echo \'" + l + "';")
     result = '\n'.join(result)
     pyperclip.copy(result)
+
+def unechoHTML():
+    text = str(pyperclip.paste())
+    lines = text.split('\n')
+    result = []
+    for l in lines:
+        result.append(l[:-2][6:]);
+    result = '\n'.join(result)
+    pyperclip.copy(result)
